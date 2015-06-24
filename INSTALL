@@ -1,0 +1,10 @@
+From terminal, locate in this folder and than run:
+
+make configure
+make compile
+
+
+To start/stop OFNIC:
+
+sudo make start
+sudo make stop

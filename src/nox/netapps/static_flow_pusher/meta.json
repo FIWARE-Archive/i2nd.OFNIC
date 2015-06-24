@@ -1,0 +1,16 @@
+{
+    "components": [
+        {
+            "name": "sflowpusher" ,
+            "dependencies": [
+                "python"
+            ], 
+            "python": "nox.netapps.static_flow_pusher.flowpusher"
+        },
+        {
+            "name": "sflowpusher_ws" ,
+            "dependencies": ["python", "sflowpusher"],
+            "python": "nox.netapps.static_flow_pusher.flowpusherWS"
+        }
+    ]
+}
