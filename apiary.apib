@@ -45,42 +45,5 @@ The next subsections will provide an insight of all the possible commands of eac
 ## Synchronize
 Synchronize commands allow the users of the NetIC API to retrieve information about network topology, node configuration, port status, etc.
 
-
- **User attributes:**  
-   
- - id `(Number)` : unique identifier.   
- - fname `(String)` : First Name.  
- - lname `(String)` : Last Name.  
- - email `(String)` : email id of the user.  
-   
- ---  
- ## User Collection [/users(?since,limit)]  
- ### List all users [GET]  
- Retrieve paginated list of users.  
-   
- + Parameters  
-   + since (optional, String) ... Timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ` Only users updated at or after this time are returned.  
-   + limit (optional, Number) ... maximum number of records expected by client.  
-   
- + Response 200 (application/json)  
-   
-     [  
-       {  
-         "id": 1,  
-         "fname": "Pandurang",  
-         "lname": "Patil",  
-         "email": "pandurang@email.com"  
-       },  
-       {  
-         "id": 2,  
-         "fname": "Sangram",  
-         "lname": "Shinde",  
-         "email": "sangram@email.com"  
-       }  
-     ]  
-   
- + Response 401 (application/json)  
-   
-     {  
-       "error": "error.unauthorized"  
-     }  
+### List network
+Get list of nodes and virtual paths.
