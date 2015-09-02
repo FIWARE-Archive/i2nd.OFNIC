@@ -2,12 +2,64 @@ FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
 # FIWARE OFNIC
-
-TODO
+The NetIC Restful API API is intended to access network status information and to allow a pre-defined level of programmability within the network. This programmability may also enable network virtualization, i. e., the abstraction of the physical network resources as well as their control by a virtual network provider. This is a RESTful, resource-oriented API accessed via HTTP that uses JSON-based representations for information interchange.
+It should be noted that the exposition of specific capabilities via the northbound interface depends on the capabilities and the technology of the underlying network. Users of the API will be able to explore the functionalities, by navigating this API in a RESTful fashion.
 
 # Allowed HTTPs requests:  
-PUT   : To create resource   
-POST  : Update resource  
-GET   : Get a resource or list of resources  
-DELETE : To delete resource  
+- PUT   : To create resource   
+- POST  : Update resource  
+- GET   : Get a resource or list of resources  
+- DELETE : To delete resource  
   
+# Description Of Usual Server Responses:  
+- 200 `OK` - the request was successful (some API calls may return 201 instead).  
+- 201 `Created` - the request was successful and a resource was created.  
+- 204 `No Content` - the request was successful but there is no representation to return (i.e. the response is empty).  
+- 400 `Bad Request` - the request could not be understood or was missing required parameters.  
+- 401 `Unauthorized` - authentication failed or user doesn't have permissions for requested operation.  
+- 403 `Forbidden` - access denied.  
+- 404 `Not Found` - resource was not found.  
+- 405 `Method Not Allowed` - requested method is not supported for resource.  
+
+# Group User  
+ Represents user details.   
+   
+ ---  
+ **User attributes:**  
+   
+ - id `(Number)` : unique identifier.   
+ - fname `(String)` : First Name.  
+ - lname `(String)` : Last Name.  
+ - email `(String)` : email id of the user.  
+   
+ ---  
+ ## User Collection [/users(?since,limit)]  
+ ### List all users [GET]  
+ Retrieve paginated list of users.  
+   
+ + Parameters  
+   + since (optional, String) ... Timestamp in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ` Only users updated at or after this time are returned.  
+   + limit (optional, Number) ... maximum number of records expected by client.  
+   
+ + Response 200 (application/json)  
+   
+     [  
+       {  
+         "id": 1,  
+         "fname": "Pandurang",  
+         "lname": "Patil",  
+         "email": "pandurang@email.com"  
+       },  
+       {  
+         "id": 2,  
+         "fname": "Sangram",  
+         "lname": "Shinde",  
+         "email": "sangram@email.com"  
+       }  
+     ]  
+   
+ + Response 401 (application/json)  
+   
+     {  
+       "error": "error.unauthorized"  
+     }  
