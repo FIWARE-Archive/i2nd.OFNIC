@@ -261,3 +261,152 @@ Create a new virtual path in the network.
             directPathName: "81133498"
             reversPathName: "16472338"
         } 
+        
+### GET /netic.v1/OFNIC/virtualpath/{pathID}
+List all created virtual paths in the network.
+
+## Parameters
+    @pathID = Virtual path id
+
+## Example
+
+        https://localhost:2222/netic.v1/OFNIC/virtualpath/81133498
+
+### Response 200 (application/json)
+
+    [
+        {
+            pathName: "81133498"
+            flow: {
+                nw_src: "10.0.0.1"
+                nw_dst: "10.0.0.3"
+                dp_src: "00:00:00:00:00:00:00:01"
+                dp_dst: "00:00:00:00:00:00:00:03"
+                dl_src: ""
+                dl_dst: ""
+                tp_src: ""
+                tp_dst: ""
+                bandwidth: ""
+                bidirectional: "1"
+                first_port: "1"
+                last_port: "1"
+                etherType: "0x800"
+                tosBits: ""
+                priority: "200"
+                protocol: ""
+            }
+            edgeList: [2]
+            0:  {
+                headNode: "00:00:00:00:00:00:00:01"
+                tailNode: "00:00:00:00:00:00:00:02"
+                headPort: "2"
+                tailPort: "2"
+            }
+            1:  {
+                headNode: "00:00:00:00:00:00:00:02"
+                tailNode: "00:00:00:00:00:00:00:03"
+                headPort: "3"
+                tailPort: "2"
+            }
+        }
+    ]
+
++ Response 200 (application/json)
+
+        [
+            {
+                pathName: "81133498"
+                flow: {
+                    nw_src: "10.0.0.1"
+                    nw_dst: "10.0.0.3"
+                    dp_src: "00:00:00:00:00:00:00:01"
+                    dp_dst: "00:00:00:00:00:00:00:03"
+                    dl_src: ""
+                    dl_dst: ""
+                    tp_src: ""
+                    tp_dst: ""
+                    bandwidth: ""
+                    bidirectional: "1"
+                    first_port: "1"
+                    last_port: "1"
+                    etherType: "0x800"
+                    tosBits: ""
+                    priority: "200"
+                    protocol: ""
+                }
+                edgeList: [2]
+                0:  {
+                    headNode: "00:00:00:00:00:00:00:01"
+                    tailNode: "00:00:00:00:00:00:00:02"
+                    headPort: "2"
+                    tailPort: "2"
+                }
+                1:  {
+                    headNode: "00:00:00:00:00:00:00:02"
+                    tailNode: "00:00:00:00:00:00:00:03"
+                    headPort: "3"
+                    tailPort: "2"
+                }
+            }
+        ]
+        
+        
+### DELETE /netic.v1/OFNIC/virtualpath/{pathId}
+Remove a virtual path
+
+## Example
+
+        https://localhost:2222/netic.v1/OFNIC/virtualpath/81133498
+
+### Response 200 (application/json)
+
+    [
+        {
+        ok
+        }
+    ]
+
++ Response 200 (application/json)
+
+        [
+            {
+            ok
+            }
+        ]
+
+
+# Group Monitor
+Monitor group of commands provides the APIs to retrieve collected network statistics about ports of network nodes. Parameters collected are amount of bytes transmitted per unit of time, number of packets transmitted per unit of time and others. The Monitor commands are explained below.
+
+### GET /netic.v1/OFNIC/synchronize/network
+Get list of nodes and virtual paths. 
+
+## Example
+
+        https://localhost:2222/netic.v1/OFNIC/synchronize/network
+
+### Response 200 (application/json)
+
+    [   
+        {
+            "paths":[],
+            "nodes":[
+                "00:00:00:00:00:00:00:02",
+                "00:00:00:00:00:00:00:01",
+                "00:00:00:00:00:00:00:03"
+                ]
+        }
+    ]
+    
++ Response 200 (application/json)
+
+        [   
+            {
+                "paths":[],
+                "nodes":[
+                    "00:00:00:00:00:00:00:02",
+                    "00:00:00:00:00:00:00:01",
+                    "00:00:00:00:00:00:00:03"
+                    ]
+            }
+        ]
