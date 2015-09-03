@@ -37,14 +37,14 @@ This API exposes a set of commands on the NetIC GE that enables information retr
 # API Operations 
 In this section we go in depth for each operation. The API operations are divided into three groups of functionalities: 
  - Synchronize 
- - Monitor
  - Virtualpaths
+ - Monitor
  
 The next subsections will provide an insight of all the possible commands of each group.
 
 ---
 
-# Synchronize
+# Group Synchronize
 Synchronize commands allow the users of the NetIC API to retrieve information about network topology, node configuration, port status, etc.
 
 ### GET /netic.v1/OFNIC/synchronize/network
@@ -126,7 +126,7 @@ Retrieve information about the node with id: nodeID
         ]
 
 ### GET /netic.v1/OFNIC/synchronize/network/node/{nodeID}/port/{portID}
-Retrieve information about the port with id: portID on the node with id: nodeID
+Retrieve all available information about the port with id: nodeID located in the node with id: portID
 
 ## Parameters
     @nodeID = Node id
@@ -167,5 +167,43 @@ Retrieve information about the port with id: portID on the node with id: nodeID
                         "nodeId":"00:00:00:00:00:00:00:02"
                     }
                 }
+            }
+        ]
+
+# Group Virtual paths
+
+### GET /netic.v1/OFNIC/virtualpath
+List all created virtual paths in the network.
+
+
+## Example
+
+        https://localhost:2222/netic.v1/OFNIC/virtualpath
+
+### Response 200 (application/json)
+
+    [
+        {
+        "resultCode": 0, 
+        "displayError": "No error", 
+        "result": {
+            "Paths": [
+                "7a8b",
+                "dc6b"
+            ]
+        }
+    ]
+
++ Response 200 (application/json)
+
+        [
+            {
+            "resultCode": 0, 
+            "displayError": "No error", 
+            "result": {
+                "Paths": [
+                    "7a8b",
+                    "dc6b"
+                ]
             }
         ]
