@@ -50,7 +50,11 @@ Synchronize commands allow the users of the NetIC API to retrieve information ab
 ### GET /netic.v1/OFNIC/synchronize/network
 Get list of nodes and virtual paths. 
 
-# Response 200 (application/json)
+## Example
+
+        https://localhost:2222/netic.v1/OFNIC/synchronize/network
+
+### Response 200 (application/json)
 
     [   
         {
@@ -76,6 +80,46 @@ Get list of nodes and virtual paths.
             }
         ]
     
----
 
-Example: https://localhost:2222/netic.v1/OFNIC/synchronize/network
+### GET /netic.v1/OFNIC/synchronize/network/node/{nodeID}
+Retrieve information about the node with id: nodeID
+
+## Example
+
+        https://localhost:2222/netic.v1/OFNIC/synchronize/network/node/00:00:00:00:00:00:00:01
+
+### Response 200 (application/json)
+
+    [
+        {
+            "id":"2",
+            "type":"OF"
+        },
+        {   
+            "id":"1",
+            "type":"OF"
+        },
+        {
+            "id":"0",
+            "type":"SW"
+        }
+    ]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id":"2",
+                "type":"OF"
+            },
+            {   
+                "id":"1",
+                "type":"OF"
+            },
+            {
+                "id":"0",
+                "type":"SW"
+            }
+        ]
+
+
