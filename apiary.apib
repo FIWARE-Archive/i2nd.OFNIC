@@ -84,6 +84,9 @@ Get list of nodes and virtual paths.
 ### GET /netic.v1/OFNIC/synchronize/network/node/{nodeID}
 Retrieve information about the node with id: nodeID
 
+## Parameters
+    @nodeID = Node id.
+
 ## Example
 
         https://localhost:2222/netic.v1/OFNIC/synchronize/network/node/00:00:00:00:00:00:00:01
@@ -122,4 +125,47 @@ Retrieve information about the node with id: nodeID
             }
         ]
 
+### GET /netic.v1/OFNIC/synchronize/network/node/{nodeID}/port/{portID}
+Retrieve information about the port with id: portID on the node with id: nodeID
 
+## Parameters
+    @nodeID = Node id
+    @portID = Port id
+
+## Example
+
+        https://localhost:2222/netic.v1/OFNIC/synchronize/network/node/00:00:00:00:00:00:00:01/port/2
+
+### Response 200 (application/json)
+
+    [
+        {
+            "properties":{
+                "name":"s1-eth2",
+                "state":"1",
+                "type":"OF",
+                "bandwidth":"10000000000"},
+                "link":{
+                    "port":"2",
+                    "nodeId":"00:00:00:00:00:00:00:02"
+                }
+            }
+        }
+    ]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "properties":{
+                    "name":"s1-eth2",
+                    "state":"1",
+                    "type":"OF",
+                    "bandwidth":"10000000000"},
+                    "link":{
+                        "port":"2",
+                        "nodeId":"00:00:00:00:00:00:00:02"
+                    }
+                }
+            }
+        ]
