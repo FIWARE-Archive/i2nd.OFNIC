@@ -378,23 +378,28 @@ Remove a virtual path
 # Group Monitor
 Monitor group of commands provides the APIs to retrieve collected network statistics about ports of network nodes. Parameters collected are amount of bytes transmitted per unit of time, number of packets transmitted per unit of time and others. The Monitor commands are explained below.
 
-### GET /netic.v1/OFNIC/synchronize/network
-Get list of nodes and virtual paths. 
+### GET /netic.v1/statistics/node/{nodeID}/port/{portID}
+Retrieve all available statistics about port with id: portID on node with id: nodeID
 
 ## Example
 
-        https://localhost:2222/netic.v1/OFNIC/synchronize/network
+        https://localhost:2222/netic.v1/OFNIC/statistics/node/00:00:00:00:00:00:00:01/port/1
 
 ### Response 200 (application/json)
 
     [   
         {
-            "paths":[],
-            "nodes":[
-                "00:00:00:00:00:00:00:02",
-                "00:00:00:00:00:00:00:01",
-                "00:00:00:00:00:00:00:03"
-                ]
+            receiveFrameError: "0"
+            receiveCrcError: "0"
+            receiveDrops: "0"
+            receiveBytes: "1328"
+            receiveErrors: "0"
+            receiveOverRunError: "0"
+            transmitBytes: "797295"
+            transmitDrops: "0"
+            transmitErrors: "0"
+            transmitPackets: "5152"
+            collisionCount: "0"
         }
     ]
     
@@ -402,11 +407,45 @@ Get list of nodes and virtual paths.
 
         [   
             {
-                "paths":[],
-                "nodes":[
-                    "00:00:00:00:00:00:00:02",
-                    "00:00:00:00:00:00:00:01",
-                    "00:00:00:00:00:00:00:03"
-                    ]
+                receiveFrameError: "0"
+                receiveCrcError: "0"
+                receiveDrops: "0"
+                receiveBytes: "1328"
+                receiveErrors: "0"
+                receiveOverRunError: "0"
+                transmitBytes: "797295"
+                transmitDrops: "0"
+                transmitErrors: "0"
+                transmitPackets: "5152"
+                collisionCount: "0"
+            }
+        ]
+        
+### GET /netic.v1/statistics/virtualpath/{pathID}
+Retrieve all available statistics about the virtual path with id: pathID
+
+## Example
+
+        https://localhost:2222/netic.v1/OFNIC/statistics/virtualpath/16472338
+
+### Response 200 (application/json)
+
+    [   
+        {
+            packetCount: "0"
+            durationSeconds: "839"
+            byteCount: "0"
+            durationNanoseconds: "496000000"
+        }
+    ]
+    
++ Response 200 (application/json)
+
+        [   
+            {
+                packetCount: "0"
+                durationSeconds: "839"
+                byteCount: "0"
+                durationNanoseconds: "496000000"
             }
         ]
