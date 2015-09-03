@@ -207,3 +207,57 @@ List all created virtual paths in the network.
                 ]
             }
         ]
+        
+### POST /netic.v1/OFNIC/virtualpath/create
+Create a new virtual path in the network.
+
+### Request (application/json)
+    
++ nw_src -  IPv4 first node addresses - Mandatory parameter
++ nw_dst - IPv4 last node addresses - Mandatory parameter
++ dp_src - first node ID (OpenFlow ID) - Mandatory if hosts don't announce their link layer info with LLDP
++ dp_dst - last node ID (OpenFlow ID) - Mandatory parameter Mandatory if hosts don't announcetheir link layer info with LLDP
++ dl_src - first node mac address - Mandatory if hosts don't announce their link layer info with LLDP
++ dl_dst - last node mac address - Mandatory if hosts don't announce their link layer info with LLDP
++ tp_src - first node tcp/udp port - Optional
++ tp_dst - last node tcp/udp port - Optional
++ bandwidth - bandwidth on path (kbps) - Optional
++ bidirectional - bidirectional flows - Mandatory parameter
++ first_port - ingress port on first node - Mandatory if hosts don't announce their link layer info with LLDP
++ last_port - exit port on last node - Mandatory if hosts don't announce their link layer info with LLDP
++ etherType - etherType content - Optional
++ protocol - protocol content - Optional
+
+## Example
+        https://localhost:2222/netic.v1/OFNIC/virtualpath/create
+
+## Create VirtualPath Request (application/json)
+    {
+        "nw_src":"10.0.0.1",
+        "nw_dst":"10.0.0.3",
+        "dp_src":"",
+        "dp_dst":"",
+        "dl_src":"",
+        "dl_dst":"",
+        "tp_src":"",
+        "tp_dst":"",
+        "bandwidth":"",
+        "bidirectional":"1",
+        "first_port":"",
+        "last_port":"",
+        "etherType":"",
+        "protocol":""
+    } 
+
+### Response 201 (application/json)
+    {
+        directPathName: "81133498"
+        reversPathName: "16472338"
+    } 
+ 
++ Response 201 (application/json)
+
+        {
+            directPathName: "81133498"
+            reversPathName: "16472338"
+        } 
