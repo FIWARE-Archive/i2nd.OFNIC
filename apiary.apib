@@ -42,8 +42,40 @@ In this section we go in depth for each operation. The API operations are divide
  
 The next subsections will provide an insight of all the possible commands of each group.
 
-## Synchronize
+---
+
+# Synchronize
 Synchronize commands allow the users of the NetIC API to retrieve information about network topology, node configuration, port status, etc.
 
-### List network
-Get list of nodes and virtual paths.
+### GET /netic.v1/OFNIC/synchronize/network
+Get list of nodes and virtual paths. 
+
+# Response 200 (application/json)
+
+    [   
+        {
+            "paths":[],
+            "nodes":[
+                "00:00:00:00:00:00:00:02",
+                "00:00:00:00:00:00:00:01",
+                "00:00:00:00:00:00:00:03"
+                ]
+        }
+    ]
+    
++ Response 200 (application/json)
+
+        [   
+            {
+                "paths":[],
+                "nodes":[
+                    "00:00:00:00:00:00:00:02",
+                    "00:00:00:00:00:00:00:01",
+                    "00:00:00:00:00:00:00:03"
+                    ]
+            }
+        ]
+    
+---
+
+Example: https://localhost:2222/netic.v1/OFNIC/synchronize/network
