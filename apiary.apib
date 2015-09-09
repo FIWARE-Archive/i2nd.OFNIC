@@ -6,12 +6,15 @@ The NetIC Restful API API is intended to access network status information and t
 It should be noted that the exposition of specific capabilities via the northbound interface depends on the capabilities and the technology of the underlying network. Users of the API will be able to explore the functionalities, by navigating this API in a RESTful fashion.
 
 # Allowed HTTPs requests:  
+
 - PUT   : To create resource   
 - POST  : Update resource  
 - GET   : Get a resource or list of resources  
 - DELETE : To delete resource  
   
+
 # Description Of Usual Server Responses:  
+
 - 200 `OK` - the request was successful (some API calls may return 201 instead).  
 - 201 `Created` - the request was successful and a resource was created.  
 - 204 `No Content` - the request was successful but there is no representation to return (i.e. the response is empty).  
@@ -26,46 +29,33 @@ Each HTTP request against the NetIC RESTful API requires the inclusion of specif
 
 # NetIC API core
 This API exposes a set of commands on the NetIC GE that enables information retrieval from and some level of control of the underlying network. This is done through manipulating different objects, like:
+
 - Network
 - Node
 - Port
 - Link
 - VirtualPath 
-   
- ---  
+
 
 # API Operations 
 In this section we go in depth for each operation. The API operations are divided into three groups of functionalities: 
+
  - Synchronize 
  - Virtualpaths
  - Monitor
  
+
 The next subsections will provide an insight of all the possible commands of each group.
 
+
 ---
+
 
 # Group Synchronize
 Synchronize commands allow the users of the NetIC API to retrieve information about network topology, node configuration, port status, etc.
 
 ### GET /netic.v1/OFNIC/synchronize/network
 Get list of nodes and virtual paths. 
-
-## Example
-
-        https://localhost:2222/netic.v1/OFNIC/synchronize/network
-
-### Response 200 (application/json)
-
-    [   
-        {
-            "paths":[],
-            "nodes":[
-                "00:00:00:00:00:00:00:02",
-                "00:00:00:00:00:00:00:01",
-                "00:00:00:00:00:00:00:03"
-                ]
-        }
-    ]
     
 + Response 200 (application/json)
 
@@ -85,28 +75,8 @@ Get list of nodes and virtual paths.
 Retrieve information about the node with id: nodeID
 
 ## Parameters
-    @nodeID = Node id.
 
-## Example
-
-        https://localhost:2222/netic.v1/OFNIC/synchronize/network/node/00:00:00:00:00:00:00:01
-
-### Response 200 (application/json)
-
-    [
-        {
-            "id":"2",
-            "type":"OF"
-        },
-        {   
-            "id":"1",
-            "type":"OF"
-        },
-        {
-            "id":"0",
-            "type":"SW"
-        }
-    ]
++ nodeID (string) - OpenFlow Node ID 
 
 + Response 200 (application/json)
 
@@ -129,29 +99,9 @@ Retrieve information about the node with id: nodeID
 Retrieve all available information about the port with id: nodeID located in the node with id: portID
 
 ## Parameters
-    @nodeID = Node id
-    @portID = Port id
-
-## Example
-
-        https://localhost:2222/netic.v1/OFNIC/synchronize/network/node/00:00:00:00:00:00:00:01/port/2
-
-### Response 200 (application/json)
-
-    [
-        {
-            "properties":{
-                "name":"s1-eth2",
-                "state":"1",
-                "type":"OF",
-                "bandwidth":"10000000000"},
-                "link":{
-                    "port":"2",
-                    "nodeId":"00:00:00:00:00:00:00:02"
-                }
-            }
-        }
-    ]
+    
++ nodeID (string) - OpenFlow Node ID
++ portID (string) - OpenFlow Node port's number
 
 + Response 200 (application/json)
 
@@ -175,25 +125,6 @@ Retrieve all available information about the port with id: nodeID located in the
 ### GET /netic.v1/OFNIC/virtualpath
 List all created virtual paths in the network.
 
-
-## Example
-
-        https://localhost:2222/netic.v1/OFNIC/virtualpath
-
-### Response 200 (application/json)
-
-    [
-        {
-        "resultCode": 0, 
-        "displayError": "No error", 
-        "result": {
-            "Paths": [
-                "7a8b",
-                "dc6b"
-            ]
-        }
-    ]
-
 + Response 200 (application/json)
 
         [
@@ -212,24 +143,23 @@ List all created virtual paths in the network.
 Create a new virtual path in the network.
 
 ### Request (application/json)
-    
-+ nw_src -  IPv4 first node addresses - Mandatory parameter
-+ nw_dst - IPv4 last node addresses - Mandatory parameter
-+ dp_src - first node ID (OpenFlow ID) - Mandatory if hosts don't announce their link layer info with LLDP
-+ dp_dst - last node ID (OpenFlow ID) - Mandatory parameter Mandatory if hosts don't announcetheir link layer info with LLDP
-+ dl_src - first node mac address - Mandatory if hosts don't announce their link layer info with LLDP
-+ dl_dst - last node mac address - Mandatory if hosts don't announce their link layer info with LLDP
-+ tp_src - first node tcp/udp port - Optional
-+ tp_dst - last node tcp/udp port - Optional
-+ bandwidth - bandwidth on path (kbps) - Optional
-+ bidirectional - bidirectional flows - Mandatory parameter
-+ first_port - ingress port on first node - Mandatory if hosts don't announce their link layer info with LLDP
-+ last_port - exit port on last node - Mandatory if hosts don't announce their link layer info with LLDP
-+ etherType - etherType content - Optional
-+ protocol - protocol content - Optional
+   
+## Body's Parameters
 
-## Example
-        https://localhost:2222/netic.v1/OFNIC/virtualpath/create
++ nw_src (String) -  IPv4 first node addresses - Mandatory parameter
++ nw_dst (String) - IPv4 last node addresses - Mandatory parameter
++ dp_src (String) - first node ID (OpenFlow ID) - Mandatory if hosts don't announce their link layer info with LLDP
++ dp_dst (String) - last node ID (OpenFlow ID) - Mandatory parameter Mandatory if hosts don't announcetheir link layer info with LLDP
++ dl_src (String) - first node mac address - Mandatory if hosts don't announce their link layer info with LLDP
++ dl_dst (String) - last node mac address - Mandatory if hosts don't announce their link layer info with LLDP
++ tp_src (String) - first node tcp/udp port - Optional
++ tp_dst (String) - last node tcp/udp port - Optional
++ bandwidth (String) - bandwidth on path (kbps) - Optional
++ bidirectional (String) - bidirectional flows - Mandatory parameter
++ first_port (String) - ingress port on first node - Mandatory if hosts don't announce their link layer info with LLDP
++ last_port (String) - exit port on last node - Mandatory if hosts don't announce their link layer info with LLDP
++ etherType (String) - etherType content - Optional
++ protocol (String) - protocol content - Optional
 
 ## Create VirtualPath Request (application/json)
     {
@@ -248,12 +178,6 @@ Create a new virtual path in the network.
         "etherType":"",
         "protocol":""
     } 
-
-### Response 201 (application/json)
-    {
-        directPathName: "81133498"
-        reversPathName: "16472338"
-    } 
  
 + Response 201 (application/json)
 
@@ -266,50 +190,8 @@ Create a new virtual path in the network.
 List all created virtual paths in the network.
 
 ## Parameters
-    @pathID = Virtual path id
 
-## Example
-
-        https://localhost:2222/netic.v1/OFNIC/virtualpath/81133498
-
-### Response 200 (application/json)
-
-    [
-        {
-            pathName: "81133498"
-            flow: {
-                nw_src: "10.0.0.1"
-                nw_dst: "10.0.0.3"
-                dp_src: "00:00:00:00:00:00:00:01"
-                dp_dst: "00:00:00:00:00:00:00:03"
-                dl_src: ""
-                dl_dst: ""
-                tp_src: ""
-                tp_dst: ""
-                bandwidth: ""
-                bidirectional: "1"
-                first_port: "1"
-                last_port: "1"
-                etherType: "0x800"
-                tosBits: ""
-                priority: "200"
-                protocol: ""
-            }
-            edgeList: [2]
-            0:  {
-                headNode: "00:00:00:00:00:00:00:01"
-                tailNode: "00:00:00:00:00:00:00:02"
-                headPort: "2"
-                tailPort: "2"
-            }
-            1:  {
-                headNode: "00:00:00:00:00:00:00:02"
-                tailNode: "00:00:00:00:00:00:00:03"
-                headPort: "3"
-                tailPort: "2"
-            }
-        }
-    ]
++ pathID (String) = Virtual path id
 
 + Response 200 (application/json)
 
@@ -354,17 +236,9 @@ List all created virtual paths in the network.
 ### DELETE /netic.v1/OFNIC/virtualpath/{pathId}
 Remove a virtual path
 
-## Example
+## Parameters
 
-        https://localhost:2222/netic.v1/OFNIC/virtualpath/81133498
-
-### Response 200 (application/json)
-
-    [
-        {
-        ok
-        }
-    ]
++ pathID (String) = Virtual path id
 
 + Response 200 (application/json)
 
@@ -380,28 +254,11 @@ Monitor group of commands provides the APIs to retrieve collected network statis
 
 ### GET /netic.v1/statistics/node/{nodeID}/port/{portID}
 Retrieve all available statistics about port with id: portID on node with id: nodeID
+    
+## Parameters
 
-## Example
-
-        https://localhost:2222/netic.v1/OFNIC/statistics/node/00:00:00:00:00:00:00:01/port/1
-
-### Response 200 (application/json)
-
-    [   
-        {
-            receiveFrameError: "0"
-            receiveCrcError: "0"
-            receiveDrops: "0"
-            receiveBytes: "1328"
-            receiveErrors: "0"
-            receiveOverRunError: "0"
-            transmitBytes: "797295"
-            transmitDrops: "0"
-            transmitErrors: "0"
-            transmitPackets: "5152"
-            collisionCount: "0"
-        }
-    ]
++ nodeID (String) = OpenFlow node ID
++ portID (String) = OpenFlow node's port number
     
 + Response 200 (application/json)
 
@@ -423,22 +280,11 @@ Retrieve all available statistics about port with id: portID on node with id: no
         
 ### GET /netic.v1/statistics/virtualpath/{pathID}
 Retrieve all available statistics about the virtual path with id: pathID
-
-## Example
-
-        https://localhost:2222/netic.v1/OFNIC/statistics/virtualpath/16472338
-
-### Response 200 (application/json)
-
-    [   
-        {
-            packetCount: "0"
-            durationSeconds: "839"
-            byteCount: "0"
-            durationNanoseconds: "496000000"
-        }
-    ]
     
+## Parameters
+
++ pathID (String) = Virtual path id
+
 + Response 200 (application/json)
 
         [   
