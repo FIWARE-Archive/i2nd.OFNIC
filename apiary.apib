@@ -146,20 +146,20 @@ Create a new virtual path in the network.
    
 ## Body's Parameters
 
-+ nw_src (String) -  IPv4 first node addresses - Mandatory parameter
-+ nw_dst (String) - IPv4 last node addresses - Mandatory parameter
-+ dp_src (String) - first node ID (OpenFlow ID) - Mandatory if hosts don't announce their link layer info with LLDP
-+ dp_dst (String) - last node ID (OpenFlow ID) - Mandatory parameter Mandatory if hosts don't announcetheir link layer info with LLDP
-+ dl_src (String) - first node mac address - Mandatory if hosts don't announce their link layer info with LLDP
-+ dl_dst (String) - last node mac address - Mandatory if hosts don't announce their link layer info with LLDP
-+ tp_src (String) - first node tcp/udp port - Optional
-+ tp_dst (String) - last node tcp/udp port - Optional
-+ bandwidth (String) - bandwidth on path (kbps) - Optional
-+ bidirectional (String) - bidirectional flows - Mandatory parameter
-+ first_port (String) - ingress port on first node - Mandatory if hosts don't announce their link layer info with LLDP
-+ last_port (String) - exit port on last node - Mandatory if hosts don't announce their link layer info with LLDP
-+ etherType (String) - etherType content - Optional
-+ protocol (String) - protocol content - Optional
++ nw_src (String | required) -  IPv4 first node addresses
++ nw_dst (String | required) - IPv4 last node addresses
++ dp_src (String | optional) - first node ID (OpenFlow ID) - Mandatory if hosts don't announce their link layer info with LLDP
++ dp_dst (String | optional) - last node ID (OpenFlow ID) - Mandatory parameter Mandatory if hosts don't announcetheir link layer info with LLDP
++ dl_src (String | optional) - first node mac address - Mandatory if hosts don't announce their link layer info with LLDP
++ dl_dst (String | optional) - last node mac address - Mandatory if hosts don't announce their link layer info with LLDP
++ tp_src (String | optional) - first node tcp/udp port - Optional
++ tp_dst (String | optional) - last node tcp/udp port - Optional
++ bandwidth (String | optional) - bandwidth on path (kbps) - Optional
++ bidirectional (String | required) - bidirectional flows
++ first_port (String | optional) - ingress port on first node - Mandatory if hosts don't announce their link layer info with LLDP
++ last_port (String | optional) - exit port on last node - Mandatory if hosts don't announce their link layer info with LLDP
++ etherType (String | optional) - etherType content - Optional
++ protocol (String | optional) - protocol content - Optional
 
 ## Create VirtualPath Request (application/json)
     {
