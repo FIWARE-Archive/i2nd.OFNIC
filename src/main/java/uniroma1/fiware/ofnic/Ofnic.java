@@ -8,24 +8,29 @@ import java.util.ArrayList;
 import javax.servlet.Filter;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.FilterRegistrationBean;
-import org.springframework.boot.SpringApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configurers.GlobalAuthenticationConfigurerAdapter;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.web.WebApplicationInitializer;
+
+import uniroma1.fiware.ofnic.data.Constants;
+import uniroma1.fiware.ofnic.data.TempData;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.filter.HTTPBasicAuthFilter;
 
-import uniroma1.fiware.ofnic.data.Constants;
-import uniroma1.fiware.ofnic.data.TempData;
-
 @ComponentScan
 @EnableAutoConfiguration
-//@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
+@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class Ofnic implements WebApplicationInitializer /*implements CommandLineRunner*/ {
 
 
@@ -75,7 +80,7 @@ public class Ofnic implements WebApplicationInitializer /*implements CommandLine
 
 
 
-	/*@Configuration
+	@Configuration
     protected static class AuthenticationConfiguration extends GlobalAuthenticationConfigurerAdapter {
         @Override
         public void init(AuthenticationManagerBuilder auth) throws Exception {
@@ -101,7 +106,8 @@ public class Ofnic implements WebApplicationInitializer /*implements CommandLine
     			TempData.logger.error(e.getMessage());
     			}
         }
-    }*/
+    }
+
 
 
 	private static void loadQosQueueConfiguration() {
@@ -125,6 +131,8 @@ public class Ofnic implements WebApplicationInitializer /*implements CommandLine
 			TempData.logger.error(e.getMessage());
 			}
 		}
+
+
 
 	private static void setupAuthenticatedClient(){
 		TempData.client = Client.create();
