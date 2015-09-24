@@ -1,8 +1,12 @@
 Welcome to FIWARE OFNIC GE's documentation!
 ==============================================================
 
+
+.. _page: https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/blob/master/README.md
 .. _here: http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FIWARE.OpenSpecification.I2ND.NetIC_R4
 .. _NetIC_RESTful_API: http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FIWARE.OpenSpecification.I2ND.NetIC_R4
+
+Refer to this page_ for more general information about OFNIC.
 
 Available manuals:
 
