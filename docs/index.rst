@@ -20,7 +20,7 @@ User & Programmers
 Introduction
 -----------------------------------------------------------------
 
-OFNIC provides a programmable interface to retrieve information and control Openflow Networks. The interface is based on the RESTful paradigm and is powered by a Web Server developed in Python programming language. OFNIC relies on the Openflow protocol in order to abstract and virtualize forwarding capabilities of the Openflow Network, but also SNMP protocol to retrieve more accurate statistics. This GEi is an extension to the NOX Openflow controller. 
+OFNIC provides a programmable interface to control and retrieve information and control Openflow Networks. The interface is based on the RESTful paradigm and is powered by a Web Server developed in Python programming language. OFNIC relies on the Openflow protocol in order to abstract and virtualize forwarding capabilities of the Openflow Network. This GEi is an extension to the OpenDaylight Openflow controller.
 
 OFNIC is composed of many modules which communicate whith each other with events. It is designed with an event-driven paradigm also to manage information that comes from the network. The OFNIC RESTful interface is an instance of the NetIC API ( NetIC Generic Enabler Open Specifications can be found here_). 
 
@@ -40,6 +40,8 @@ The OFNIC GEi is released with a GUI feature. The NetIC API users might utilize 
 The GUI relies on the OFNIC GEi, it should up and running correctly. To access the GUI from a web browser navigate to: http://localhost/gui
 
 The GUI page that appears is shown in the figure below.
+
+.. image:: OFNIC_GUI_a.png
 
 INSERT PICTURE HERE!!!________________________________________________________________
 
@@ -204,7 +206,6 @@ Now OFNIC GEi is ready to start running. With a terminal locate in the main fold
 
 The command reported below starts the OFNIC controller:
     *./run.sh*
-
 
 
 
