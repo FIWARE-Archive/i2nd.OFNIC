@@ -9,6 +9,8 @@ Available manuals:
 * User-and-Programmers_ manual.
 * Installation-and-Administration_ manual.
 
+
+
 -----------------------------------------------------------------
 
 .. _User-and-Programmers:
@@ -116,9 +118,6 @@ As one can note from the examples, all response bodies are in JSON format and th
 * result: the result of the request.
 
 
-
-
-
 -----------------------------------------------------------------
 
 .. _Installation-and-Administration:
@@ -126,6 +125,96 @@ As one can note from the examples, all response bodies are in JSON format and th
 Installation & Administration
 ==============================================================
 
-This is an example crossreference target. 1111111111111
+Goal of the document
+==============================================================
+
+The OFNIC is an implementation of the NetIC Generic Enabler Open Specifications. This GEi is in charge of providing a common programmable interface to an Openflow Network, by collecting information and statistics regarding the managed Openflow Network. This interface is based on the NetIC Open API RESTful specifications. The OFNIC GEi is an extension of the open-source OpenDaylight Controller [1]. It relies on the Openflow protocol to retrieve network information about the managed network. The OFNIC GEi provides also a Graphical User Interface (GUI) based on web technologies. Basically this is a web page with javascript code that communicates with the RESTful interface of the GEi. 
+
+Goal of this document is to provide a useful guide for the installation of OFNIC GEi, together with its GUI. The document starts describing basic software and hardware required to support the OFNIC GEi on top of a device. It then follows with specific technical information that might help users and administrators: running processes, diagnosis tests, network flows etc.
+
+OFNIC GEi
+==============================================================
+
+Software and Hardware environment
+-------------------------------------------------------------
+
+The OFNIC OpenFlow controller runs in a Java Virtual Machine. Being a Java application, it can (potentially) runs on any machine that supports Java. However, all the software have been tested on recent Linux distributions, so we recommend the following:
+
+* A recent Linux distribution (for example Ubuntu 14.04 LTS  or Debian 7.x)
+* Java Virtual Machine 1.7
+
+Prerequisites
+-------------------------------------------------------------
+
+* As the previous paragraph, being a Java application, the only requistite is Java Virtual Machine.
+
+Getting OFNIC
+-------------------------------------------------------------
+
+There are two options for obtaining the OFNIC Controller. The first option is to download the pre-built current build. The second option is to getting the source code of the component and build the code on your machine.
+
+The pre-built package can be downloaded at TBD
+
+    https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC
+
+Another way of getting the source code is to pull the code by cloning the controller repository on GitHub with the following commands:
+
+    git clone https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC.git
+
+
+Build the code
+-------------------------------------------------------------
+
+Prerequisites
+-------------------------------------------------------------
+
+The following are required for building the codebase:
+
+* Maven 3.x.y
+
+If you use a Debian or Ubuntu machine, you can install Maven with the following command:
+
+    *sudo apt-get install maven*
+
+and check the installed version with:
+
+    *mvn -v*
+
+
+Using a system shell locate in the main OFNIC source code directory, where is located the pom.xml maven’s configuration file. Run the following commands:
+
+    *mvn clean install*
+
+Configuration
+-------------------------------------------------------------
+
+qwertyqwertyqwert
+qwertqwertyqwert
+qwertqwertywertyu
+
+Running
+-------------------------------------------------------------
+Now OFNIC GEi is ready to start running. With a terminal locate in the main folder with the following content:
+
+* opendaylight build folder
+* ofnic.conf
+* ofnic-uniroma1.jar
+* qos_queue.con
+* run.sh
+
+The command reported below starts the OFNIC controller:
+    *./run.sh*
+
+
+
+
+
+
+
+
+
+
+
+
 
 
