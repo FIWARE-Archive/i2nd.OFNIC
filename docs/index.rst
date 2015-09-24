@@ -43,13 +43,11 @@ The GUI page that appears is shown in the figure below.
 
 .. image:: OFNIC_GUI_a.png
 
-INSERT PICTURE HERE!!!________________________________________________________________
-
 The default username is 'admin' and can be authenticated with the password 'admin'. After logging in, one can note that the GUI is composed of four navigation tabs: Synchronization,Statistics, Routing, and Access Control. The Synchronization tab shows the network topology with an interactive diagram. Network nodes are clickable and additional information is shown if a node is selected. For example the number of Actions or Ports. Moreover the Displayed ports are clickable and show to which other network entity is the selected node connected to.
 
 The Statistics navigation tab, concerns about the presentation of network statistics collected by the OFNIC GEi. The dynamic network topology is present so the user can select nodes he might want to monitor from the graph. The Statistics tab is shown in the figure below.
 
-INSERT PICTURE HERE!!!________________________________________________________________
+.. image:: OFNIC_GUI_b.png
 
 The presence of the Openflow network is not mandatory, if no network is attached to the OFNIC GEi, the following warning will appear on the GUI: "no network nodes detected"
 
@@ -63,61 +61,30 @@ Navigation with browser
 
 The root path of the Web Server is:
 
-    https://127.0.0.1/netic.v1/doc
+    http://localhost:8000/api-docs
 
-This page shows all commands that can be sent to the REST API of OFNIC. 
-
-Note that not all the methods and commands might be supported directly from the browser, that is because some browser does not support natively the DELETE Http command.
-
-Regarding POST command the parameters of the request might be:
-encoded in the url
-
-    *field1=value1&field2=value2&field3=value3...*
- 
-formatted as JSON objects in the body of the Http Request.
-
-    *{field1 : value1, field2 : value2, field3 : value3}*
+This page, by using the Swagger plugin, shows all commands that can be sent to the REST API of OFNIC. 
 
 
 Examples
 -----------------------------------------------------------------
 
-In this example the OFNIC GEi is connected to an Openflow network composed of three Openflow nodes. The nodes run Openvswitch for implementing the Openflow protocol and SNMPd and SNMP Sub-Agent to collect statistics. The OFNIC GEi is located at the same machine from which the browser is used. Using the browser, type in the location bar the following URL string and then press Enter.
+In this example the OFNIC GEi is connected to an Openflow network composed of three Openflow nodes. The nodes run Openvswitch for implementing the Openflow protocol. The OFNIC GEi is located at the same machine from which the browser is used. Using the browser, type in the location bar the following URL string and then press Enter.
 
     https://127.0.0.1/netic.v1/OFNIC/synchronize/network
 
 The result displayed, should be the list of nodes present in the network:
 
-    *{"resultCode": 0, "displayError": "No error", "result": {"Paths": [], "Nodes": [1, 2, 3]}}*
+        *{*
+        *"paths":[],*
+        *"nodes":[*
+        *"00:00:00:00:00:00:00:02",*
+        *"00:00:00:00:00:00:00:01",*
+        *"00:00:00:00:00:00:00:03"]*
+        *"hosts":[]}*
 
-In order to retrieve information about the configuration of node with ID equal to 2, the following string should be typed in the URL container:
-
-    https://127.0.0.1/netic.v1/OFNIC/synchronize/network/node/2
-
-The following JSON response should appear in the Web browser:
-
-    *{"resultCode": 0, "displayError": "No error", "result": {"Port_Names": ["eth3", "eth2", "br0", "eth1"], "Port_Index": [3, 2, 65534, 1], "Num_Buffers": 256, "Actions": 4095, "Num_Tables": 255}}*
-
-The same operation can be repeated to get information about port 1 of node 2, with the following URL:
-
-    https://localhost:2222/netic.v1/OFNIC/synchronize/network/node/2/port/1
-
-the following result is expected:
-
-    *{"resultCode": 0, "displayError": "No error", "result": {"Active": true, "Config": 0, "State": 0, "Speed": 0, "links": [0]}}*
-
-To retrieve statistics about a port of a certain node (for example port 1 of node 2) the following URL might be used:
-
-    https://localhost:2222/netic.v1/OFNIC/statistics/node/2/port/1
-
-and the results that appears in the browser shows the transmitted and received bytes of the specified port:
-
-    *{"resultCode": 0, "displayError": "No error", "result": {"Tx_bytes": 34, "Rx_bytes": 20}}*
-
-As one can note from the examples, all response bodies are in JSON format and three fields are always present:
-* resultCode: 0 for no errors, any other number for the occuring error.
-* displayError: a string that displays the type of error
-* result: the result of the request.
+As one can note from the examples, all response bodies are in JSON format.
+For the full RESTful API specification refers to https://fiware-uniroma1.github.io/FIWARE-OFNIC/
 
 
 -----------------------------------------------------------------
@@ -130,7 +97,7 @@ Installation & Administration
 Goal of the document
 ==============================================================
 
-The OFNIC is an implementation of the NetIC Generic Enabler Open Specifications. This GEi is in charge of providing a common programmable interface to an Openflow Network, by collecting information and statistics regarding the managed Openflow Network. This interface is based on the NetIC Open API RESTful specifications. The OFNIC GEi is an extension of the open-source OpenDaylight Controller [1]. It relies on the Openflow protocol to retrieve network information about the managed network. The OFNIC GEi provides also a Graphical User Interface (GUI) based on web technologies. Basically this is a web page with javascript code that communicates with the RESTful interface of the GEi. 
+The OFNIC is an implementation of the NetIC Generic Enabler Open Specifications. This GEi is in charge of providing a common programmable interface to an Openflow Network, by collecting information and statistics regarding the managed Openflow network node's. This interface is based on the NetIC Open API RESTful specifications. The OFNIC GEi is an extension of the open-source OpenDaylight Controller. It relies on the Openflow protocol to retrieve network information about the managed network. The OFNIC GEi provides also a Graphical User Interface (GUI) based on web technologies. Basically this is a web page with javascript code that communicates with the RESTful interface of the GEi. 
 
 Goal of this document is to provide a useful guide for the installation of OFNIC GEi, together with its GUI. The document starts describing basic software and hardware required to support the OFNIC GEi on top of a device. It then follows with specific technical information that might help users and administrators: running processes, diagnosis tests, network flows etc.
 
@@ -187,13 +154,6 @@ Using a system shell locate in the main OFNIC source code directory, where is lo
 
     *mvn clean install*
 
-Configuration
--------------------------------------------------------------
-
-qwertyqwertyqwert
-qwertqwertyqwert
-qwertqwertywertyu
-
 Running
 -------------------------------------------------------------
 Now OFNIC GEi is ready to start running. With a terminal locate in the main folder with the following content:
@@ -208,14 +168,97 @@ The command reported below starts the OFNIC controller:
     *./run.sh*
 
 
+Sanity check procedures
+==============================================================
+
+The Sanity Check Procedures are the steps that a System Administrator will take to verify that an installation is ready to be tested. This is therefore a preliminary set of tests to ensure that obvious or basic malfunctioning is fixed before proceeding to unit tests, integration tests and user validation.
+
+End to End testing
+----------------------------------------------------------
+
+This is basically quick testing to check that everything is up and running.
+
+1. Launch ofnic with the command:
+
+    *./run.sh*
+
+2. To verify that the OFNIC GEi is loaded correctly it should display bootstrap complete in the terminal on which it was launched.
+
+.. image:: diagn_a.png
+
+3. Network nodes side, on ovs switch give the following command to verify that the device is correctly connected with the controller :
+
+    *ovs-vsctl show*
+
+it should display the following log message:
+
+* Bridge "br0"
+* Controller "tcp:127.0.0.1" is_connected: true
+* Port "br0"
+* Interface "br0" type: internal
+
+4. After this two checks have been done, the GEi should be up and ready. To test that is actually running a simple check can be done from the browser. Going with a normal internet browser application to the following address:
+
+    http://localhost:8000/api-docs
+
+should display the list of all API of OFNIC GEi.
+
+List of Running Processes
+---------------------------------------------------
+
+In order to list running processes on a Linux distribution one can use ps aux command. In order to get more filtered results one can use this more articulated command:
+
+    *ps aux | grep "Name_of_process"*
+
+In the machine that hosts the OFNIC GEi the run.sh process is required to be active.
+So by typing in the terminal:
+
+    *ps aux | grep run.sh*
+
+.. image:: diagn_b.png
+
+Network interfaces Up & Open
+------------------------------------------------------------
+
+The OFNIC GEi listens to the ports 6633, 2222 and 8080, with the following command you can verify it:
+
+    *netstat -lnptu | grep tcp*
+
+in the terminal you will see a list of the process listen on port 6633, 8080 and 2222.
 
 
 
 
+Diagnosis Procedures
+==============================================================
 
+OFNIC logs to the stdout on the terminal on which it was launched.
 
+Resource availability
+--------------------------------------------------------
 
+The required RAM depends on many factors such as network topology, number of flows in the network, frequency of the statistics updates, frequency of web service requests, etc. 
 
+* Generally RAM size varies from 100 MB to 250 MB.
+* Usually the disk size required during run time is negligible.
 
+Remote Service Access
+-------------------------------------------
+
+User can verify the correct execution of the OFNIC, by directing the browser (all types are supported) to the following page:
+
+    http://localhost:8000/api-docs
+
+which should display a list of commands that can be sent to the interface. Note that if the browser app is not on the same machine of the GE, the remote IP address of the GEi can be used.
+
+Resource consumption
+--------------------------------------------------------
+
+The resource consumption is highly dependent on the number of network events processed. The minimum amount of RAM is nearly 200 MB so eventually in any lower amount of RAM means that the application did not load properly. Under normal working conditions RAM size reaches the order of 250 MB so values of greater orders mean that there is some malfunctioning. CPU percentage ranges and is highly dependent on the processor speed. However it should be noted that at idle state the OFNIC processor consumption can be even lower that 0.1%.
+
+I/O flows
+--------------------------------------------------------
+
+Port 2222 for RESTful API and port 6633 for the communication with the network nodes via OpenFlow plugin.
 
 
