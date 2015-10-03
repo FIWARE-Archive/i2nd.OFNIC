@@ -2,7 +2,7 @@
 if[ ! -f /opt/ofnic/ofnic-uniroma1-LATEST.jar ]
 then
     echo "============Initialising Data============"
-    cp /root/ofnic-uniroma1-LATEST.jar /opt/ofnic/ofnic-uniroma1-LATEST.jar
+    cp ofnic-uniroma1-LATEST.jar /opt/ofnic/ofnic-uniroma1-LATEST.jar
     cp -r opendaylight /opt/ofnic/
     echo "Copied OpenDaylight to /opt/ofnic"
     echo "Copied ofnic-uniroma1-LATEST.jar to /opt/ofnic"
