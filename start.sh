@@ -1,5 +1,4 @@
 #!/bin/bash
-cd /opt/ofnic/
 echo "============STARTING OFNIC============="
-./opendaylight/run.sh &
-java -jar ofnic-uniroma1-LATEST.jar
+sh /opt/ofnic/opendaylight/run.sh &
+java -jar /opt/ofnic/ofnic-uniroma1-LATEST.jar
