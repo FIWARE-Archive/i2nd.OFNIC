@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Welcome to FIWARE OFNIC GE’s documentation! &mdash; FIWARE-OFNIC R4 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="FIWARE-OFNIC R4 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> FIWARE-OFNIC
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Welcome to FIWARE OFNIC GE&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#user-programmers">User &amp; Programmers</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#user-guide">User Guide</a><ul>
+<li><a class="reference internal" href="#ofnic-gui">OFNIC GUI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#programmer-guide">Programmer Guide</a><ul>
+<li><a class="reference internal" href="#navigation-with-browser">Navigation with browser</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">FIWARE-OFNIC</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Welcome to FIWARE OFNIC GE&#8217;s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/Users_and_programmers_manual.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="welcome-to-fiware-ofnic-ge-s-documentation">
+<h1>Welcome to FIWARE OFNIC GE&#8217;s documentation!<a class="headerlink" href="#welcome-to-fiware-ofnic-ge-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Refer to this <a class="reference external" href="https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/blob/master/README.md">page</a> for more general information about OFNIC.</p>
+<hr class="docutils" />
+</div>
+<div class="section" id="user-programmers">
+<span id="user-and-programmers"></span><h1>User &amp; Programmers<a class="headerlink" href="#user-programmers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>OFNIC provides a programmable interface to control and retrieve information and control Openflow Networks. The interface is based on the RESTful paradigm and is powered by a Web Server developed in Python programming language. OFNIC relies on the Openflow protocol in order to abstract and virtualize forwarding capabilities of the Openflow Network. This GEi is an extension to the OpenDaylight Openflow controller.</p>
+<p>OFNIC is composed of many modules which communicate whith each other with events. It is designed with an event-driven paradigm also to manage information that comes from the network. The OFNIC RESTful interface is an instance of the NetIC API ( NetIC Generic Enabler Open Specifications can be found <a class="reference external" href="http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FIWARE.OpenSpecification.I2ND.NetIC_R4">here</a>).</p>
+<p>Goal of this document is to provide a useful guide for developers who want to build new applications based on the NetIC API, and a guide for users that might utilize the provided GUI application. Specific sections are dedicated to developer tools intended to help them during development, test and deployment.</p>
+</div>
+</div>
+<div class="section" id="user-guide">
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="http://forge.fiware.org/plugins/mediawiki/wiki/fiware/index.php/FIWARE.OpenSpecification.I2ND.NetIC_R4">NetIC_RESTful_API</a> reference provides a page which describes how to use this API in details. It includes a set of commands, which can be used to manipulate and instantiate network resources physical or virtual. Since NetIC RESTful API is based on the HTTP protocol there are a rich variety of tools, which can be used to access the OFNIC GEi interface.
+The sections of the Programmer Guide will go into more detail on how to use and develop against NetIC RESTful API.</p>
+<div class="section" id="ofnic-gui">
+<h2>OFNIC GUI<a class="headerlink" href="#ofnic-gui" title="Permalink to this headline">¶</a></h2>
+<p>The OFNIC GEi is released with a GUI feature. The NetIC API users might utilize the GUI to navigate the exposed RESTful webservices of the GEi. The GUI has been developed in Javascript language, and uses the FIWARE site template. The web GUI comes embedded in the OFNIC source package release, see the OFNIC Installation-and-Administration guide to download the package.</p>
+<p>The GUI relies on the OFNIC GEi, it should up and running correctly. To access the GUI from a web browser navigate to: <a class="reference external" href="http://localhost/gui">http://localhost/gui</a></p>
+<p>The GUI page that appears is shown in the figure below.</p>
+<img alt="_images/OFNIC_GUI_a.png" src="_images/OFNIC_GUI_a.png" />
+<p>The default username is &#8216;admin&#8217; and can be authenticated with the password &#8216;admin&#8217;. After logging in, one can note that the GUI is composed of four navigation tabs: Synchronization,Statistics, Routing, and Access Control. The Synchronization tab shows the network topology with an interactive diagram. Network nodes are clickable and additional information is shown if a node is selected. For example the number of Actions or Ports. Moreover the Displayed ports are clickable and show to which other network entity is the selected node connected to.</p>
+<p>The Statistics navigation tab, concerns about the presentation of network statistics collected by the OFNIC GEi. The dynamic network topology is present so the user can select nodes he might want to monitor from the graph. The Statistics tab is shown in the figure below.</p>
+<img alt="_images/OFNIC_GUI_b.png" src="_images/OFNIC_GUI_b.png" />
+<p>The presence of the Openflow network is not mandatory, if no network is attached to the OFNIC GEi, the following warning will appear on the GUI: &#8220;no network nodes detected&#8221;</p>
+</div>
+</div>
+<div class="section" id="programmer-guide">
+<h1>Programmer Guide<a class="headerlink" href="#programmer-guide" title="Permalink to this headline">¶</a></h1>
+<p>This section describes the way a programmer can interact ith the OFNIC GEi. It is assumed that the OFNIC GEi is up and running. See the OFNIC Installation-and-Administration guide for this.</p>
+<div class="section" id="navigation-with-browser">
+<h2>Navigation with browser<a class="headerlink" href="#navigation-with-browser" title="Permalink to this headline">¶</a></h2>
+<p>The root path of the Web Server is:</p>
+<blockquote>
+<div><a class="reference external" href="http://localhost:8000/api-docs">http://localhost:8000/api-docs</a></div></blockquote>
+<p>This page, by using the Swagger plugin, shows all commands that can be sent to the REST API of OFNIC.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>In this example the OFNIC GEi is connected to an Openflow network composed of three Openflow nodes. The nodes run Openvswitch for implementing the Openflow protocol. The OFNIC GEi is located at the same machine from which the browser is used. Using the browser, type in the location bar the following URL string and then press Enter.</p>
+<blockquote>
+<div><a class="reference external" href="https://127.0.0.1/netic.v1/OFNIC/synchronize/network">https://127.0.0.1/netic.v1/OFNIC/synchronize/network</a></div></blockquote>
+<p>The result displayed, should be the list of nodes present in the network:</p>
+<blockquote>
+<div><em>{</em>
+<em>&#8220;paths&#8221;:[],</em>
+<em>&#8220;nodes&#8221;:[</em>
+<em>&#8220;00:00:00:00:00:00:00:02&#8221;,</em>
+<em>&#8220;00:00:00:00:00:00:00:01&#8221;,</em>
+<em>&#8220;00:00:00:00:00:00:00:03&#8221;]</em>
+<em>&#8220;hosts&#8221;:[]}</em></div></blockquote>
+<p>As one can note from the examples, all response bodies are in JSON format.
+For the full RESTful API specification refers to <a class="reference external" href="https://fiware-uniroma1.github.io/FIWARE-OFNIC/">https://fiware-uniroma1.github.io/FIWARE-OFNIC/</a></p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, UniRoma1.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'R4',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
