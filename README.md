@@ -25,9 +25,9 @@ OFNIC is a Software Defined Network (SDN) controller for OpenFlow-enabled networ
 [Top](#top)
 
 ## Getting OFNIC
-You can get the last stable release (v2.0), or the most updated under-development source code. 
-For the first option you can download the [OFNIC_src_archive](https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/releases/tag/v2.0), for the second option you have to pull the code by cloning the controller repository on GitHub with the following commands: 
-git clone https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC.git
+You can get the last stable release [v2.0](https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/releases/tag/v2.0), or the most updated under-development source code. 
+For the first option you can download the [FIWARE-OFNIC_v2.0_src.zip](https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/archive/v2.0.zip), for the second option you have to pull the code by cloning the controller repository on GitHub with the following commands: 
+"git clone https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC.git"
 
 [Top](#top)
 
