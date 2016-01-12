@@ -14,7 +14,7 @@ This is the code repository for OFNIC GEri, the reference implementation of the 
 This project is part of [FIWARE](http://www.fiware.org) and of the [FIWARE Catalogue](http://catalogue.fiware.org/).
 Any feedback on this documentation is highly welcome, including bugs, typos
 or things you think should be included but aren't. You can use [github issues](https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/issues/new) to provide any type of feedback.
-You can find the Installation and Administration Guide and the User and Programmer's Guide on [readthedocs.org](https://fiware-ofnic.readthedocs.org/en/latest/)
+You can find the Installation and Administration Guide and the User and Programmer's Guide on [readthedocs.org](https://fiware-ofnic.readthedocs.org/en/v2.0/)
 
 [Top](#top)
 
@@ -33,13 +33,13 @@ For the first option you can download the [FIWARE-OFNIC_v2.0_src.zip](https://gi
 
 ## Build and Install
 
-Build and Install documentation for OFNIC can be found at [the Installation and Administration Guide](https://fiware-ofnic.readthedocs.org/en/latest/Installation_and_administration_manual.html).
+Build and Install documentation for OFNIC can be found at [the Installation and Administration Guide](https://fiware-ofnic.readthedocs.org/en/v2.0/Installation_and_administration_manual.html).
 
 [Top](#top)
 
 ## Running
 
-How to run OFNIC can be found at [the Installation and Administration Guide](https://fiware-ofnic.readthedocs.org/en/latest/Installation_and_administration_manual.html).
+How to run OFNIC can be found at [the Installation and Administration Guide](https://fiware-ofnic.readthedocs.org/en/v2.0/Installation_and_administration_manual.html).
 
 [Top](#top)
 
@@ -51,7 +51,7 @@ API reference documentation can be found at [NetIC Restful API Documetation] (ht
 
 ## Testing
 
-How to run tests can be found at [the Installation and Administration Guide](https://fiware-ofnic.readthedocs.org/en/latest/Installation_and_administration_manual.html)
+How to run tests can be found at [the Installation and Administration Guide](https://fiware-ofnic.readthedocs.org/en/v2.0/Installation_and_administration_manual.html)
 
 [Top](#top)
 
