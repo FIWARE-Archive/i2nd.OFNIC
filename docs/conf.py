@@ -107,6 +107,7 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
+html_static_path = ['custom']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #html_theme = 'alabaster'
@@ -141,7 +142,7 @@ html_style = 'css/fiware_readthedocs.css'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['custom']
+#html_static_path = ['custom']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
