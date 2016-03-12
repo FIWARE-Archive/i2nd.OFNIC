@@ -107,7 +107,7 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
-html_static_path = ['custom']
+html_static_path = ['_static']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #html_theme = 'alabaster'
@@ -275,6 +275,7 @@ texinfo_documents = [
    author, 'FIWARE-OFNIC', 'One line description of project.',
    'Miscellaneous'),
 ]
+
 
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []
