@@ -181,6 +181,6 @@ The resource consumption is highly dependent on the number of network events pro
 I/O flows
 --------------------------------------------------------
 
-Port 2222 for RESTful API and port 6633 for the communication with the network nodes via OpenFlow plugin.
+Port 2222 for RESTful API and port 6633 for the communication with the network nodes via OpenFlow plugin..
 
 
