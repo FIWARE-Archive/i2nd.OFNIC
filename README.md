@@ -1,5 +1,10 @@
 #<a name="top"></a>OFNIC
 
+[![License badge](https://img.shields.io/badge/license-APACHE2-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+[![Documentation badge](https://readthedocs.org/projects/fiware-ofnic/badge/?version=latest)](https://fiware-ofnic.readthedocs.org/en/latest/)
+[![Docker badge](https://img.shields.io/docker/pulls/fiware/ofnic.svg)](https://hub.docker.com/r/fiware/ofnic/)
+[![Support badge]( https://img.shields.io/badge/support-sof-yellowgreen.svg)](http://stackoverflow.com/questions/tagged/fiware-ofnic)
+
 * [Introduction](#introduction)
 * [GEi overall description](#gei-overall-description)
 * [Build and Install](#build-and-install)
