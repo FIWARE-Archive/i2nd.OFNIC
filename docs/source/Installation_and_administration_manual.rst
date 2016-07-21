@@ -38,6 +38,8 @@ Prerequisites
 -------------------------------------------------------------
 
 * As the previous paragraph, being a Java application, the only requistite is Java Virtual Machine.
+On an Ubuntu machine, you can satisfy these requirements with:
+* sudo apt-get install openjdk-7-jdk git
 
 Getting OFNIC
 -------------------------------------------------------------
