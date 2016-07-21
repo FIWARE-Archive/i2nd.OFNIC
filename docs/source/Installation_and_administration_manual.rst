@@ -38,18 +38,20 @@ Prerequisites
 -------------------------------------------------------------
 
 As the previous paragraph, being a Java application, the only requistite is Java Virtual Machine.
+
 On an Ubuntu machine, you can satisfy these requirements with:
 
-* sudo apt-get install openjdk-7-jdk git
+    sudo apt-get install openjdk-7-jdk git
 
 Getting OFNIC
 -------------------------------------------------------------
 
 There are two options for obtaining the OFNIC Controller. The first option is to download the pre-built current build. The second option is to getting the source code of the component and build the code on your machine.
 
-The pre-built package can be downloaded at TBD
+The pre-built package can be downloaded  here:
 
-    https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC
+    https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/releases/download/v2.0/FIWARE-OFNIC-v2.0.zip
+    
 
 Another way of getting the source code is to pull the code by cloning the controller repository on GitHub with the following commands:
 
@@ -81,16 +83,10 @@ Using a system shell locate in the main OFNIC source code directory, where is lo
 
 Running
 -------------------------------------------------------------
-Now OFNIC GEi is ready to start running. With a terminal locate in the main folder with the following content:
-
-* opendaylight build folder
-* ofnic.conf
-* ofnic-uniroma1.jar
-* qos_queue.con
-* run.sh
-
 The command reported below starts the OFNIC controller:
     *./run.sh*
+
+Note: If you are building OFNIC from the source, you have to download the pre-build package, then replace the .jar file with the one produced by maven during the build
 
 
 Sanity check procedures
