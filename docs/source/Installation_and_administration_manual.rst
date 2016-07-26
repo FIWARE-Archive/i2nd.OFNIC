@@ -84,7 +84,7 @@ Using a system shell locate in the main OFNIC source code directory, where is lo
 Running
 -------------------------------------------------------------
 The command reported below starts the OFNIC controller:
-    *./run.sh*
+    *./start.sh*
 
 Note: If you are building OFNIC from the source, you have to download the pre-build package, then replace the .jar file with the one produced by maven during the build
 
@@ -101,7 +101,7 @@ This is basically quick testing to check that everything is up and running.
 
 1. Launch ofnic with the command:
 
-    *./run.sh*
+    *./start.sh*
 
 2. To verify that the OFNIC GEi is loaded correctly it should display bootstrap complete in the terminal on which it was launched.
 
