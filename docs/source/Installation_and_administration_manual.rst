@@ -118,11 +118,12 @@ it should display the following log message:
 * Port "br0"
 * Interface "br0" type: internal
 
-4. After this two checks have been done, the GEi should be up and ready. To test that is actually running a simple check can be done from the browser. Going with a normal internet browser application to the following address:
+4. After this two checks have been done, the GEi should be up and ready. To test that is actually running a simple check can be done from the browser. With an internet browser application, go to the following address:
 
     http://localhost:2222/api-docs
 
-should display the list of all API of OFNIC GEi.
+    should display the list of all API of OFNIC GEi.
+    The credentials to access the page are the one in the ofnic.conf file.
 
 List of Running Processes
 ---------------------------------------------------
