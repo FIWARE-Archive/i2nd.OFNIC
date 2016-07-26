@@ -101,7 +101,7 @@ This is basically quick testing to check that everything is up and running.
 
 1. Launch ofnic with the command:
 
-    *./run.sh*
+    *./start.sh*
 
 2. To verify that the OFNIC GEi is loaded correctly it should display bootstrap complete in the terminal on which it was launched.
 
