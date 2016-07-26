@@ -120,7 +120,7 @@ it should display the following log message:
 
 4. After this two checks have been done, the GEi should be up and ready. To test that is actually running a simple check can be done from the browser. Going with a normal internet browser application to the following address:
 
-    http://localhost:8000/api-docs
+    http://localhost:2222/api-docs
 
 should display the list of all API of OFNIC GEi.
 
