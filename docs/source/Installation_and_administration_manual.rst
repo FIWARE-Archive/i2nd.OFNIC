@@ -122,8 +122,8 @@ it should display the following log message:
 
     http://localhost:2222/api-docs
 
-    should display the list of all API of OFNIC GEi.
-    The credentials to access the page are the one in the ofnic.conf file.
+
+should display the list of all API of OFNIC GEi. The credentials to access the page are the one in the ofnic.conf file.
 
 List of Running Processes
 ---------------------------------------------------
