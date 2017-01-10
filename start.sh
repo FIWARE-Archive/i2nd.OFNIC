@@ -1,4 +1,6 @@
 #!/bin/bash
 echo "============STARTING OFNIC============="
 sh /opt/ofnic/opendaylight/run.sh &
-java -jar /opt/ofnic/ofnic-uniroma1-LATEST.jar
+echo "Waiting Opendaylight starts..."
+sleep 120
+java -jar ./ofnic-uniroma1-v2.1.jar
