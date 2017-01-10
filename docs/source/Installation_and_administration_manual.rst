@@ -46,11 +46,11 @@ On an Ubuntu machine, you can satisfy these requirements with:
 Getting OFNIC
 -------------------------------------------------------------
 
-There are two options for obtaining the OFNIC Controller. The first option is to download the pre-built current build. The second option is to getting the source code of the component and build the code on your machine.
+There are different options for obtaining the OFNIC Controller. The first option is to download the pre-built current build. The second option is to getting the source code of the component and build the code on your machine. The last is using the Docker Image
 
 The pre-built package can be downloaded  here:
 
-    https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/releases/download/v2.0/FIWARE-OFNIC-v2.0.zip
+    https://github.com/FIWARE-UNIROMA1/FIWARE-OFNIC/releases
     
 
 Another way of getting the source code is to pull the code by cloning the controller repository on GitHub with the following commands:
